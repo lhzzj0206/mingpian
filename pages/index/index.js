@@ -9,9 +9,8 @@ Page({
     animationData:{},
     isShow:false,
     cardInfo:{},
-    icon:{"txt":'111'}
   },
-  onLoad: function () {
+  onLoad: function (option) {
     var that=this
     //判断是否授权
     app.getInfo(function(res){
@@ -25,13 +24,26 @@ Page({
       }
     })
 
-    this.getCard();   //获取名片信息
+       //获取名片信息
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+    if (option.scene == undefined) {
+      app.getOpenid(function (openid) {
+        app.globalData.openid = openid;
+        that.getCard(openid);
+      })
+    } else {
+      app.globalData.openid = option.scene;
+      app.shar_to(option.scene)
+      app.addVisitLog(option.scene)
+    }
    
   },
   //获取名片信息
-  getCard:function(){
+  getCard:function(openid){
     var that=this
-    app.getCardInfo(function (data) {
+    app.getCardInfo(openid,function (data) {
       var imgs = []
       var avatar = data.avatar == undefined ? 'images/no.png' : data.avatar
       
@@ -40,7 +52,6 @@ Page({
           imgs.push(data.pictures[i].filePath)
         }
       }
-
       wx.getImageInfo({
         src: avatar,//服务器返回的图片地址
         success: function (res) {
@@ -81,7 +92,6 @@ Page({
         infoShow: 'none'
       })
     }
-    
   },
   //保存到通讯录
   screen: function () {
@@ -121,7 +131,7 @@ Page({
       timingFunction: 'linear'
     })
     that.animation = animation
-    animation.height(200).step()
+    animation.height(400).step()
     that.setData({
       animationData: animation.export(),
       // 改变显示条件
@@ -167,6 +177,7 @@ Page({
   },
   //分享
   onShareAppMessage: function (res) {
+    console.log(wx.getStorageSync('userInfo'))
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
@@ -185,4 +196,8 @@ Page({
       }
     }
   },
+  //名片码
+  getCode:function(){
+    app.saveCode(this.data.cardInfo)
+  }
 })

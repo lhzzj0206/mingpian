@@ -45,7 +45,20 @@
         <view class='title'>邮箱：</view>
         <view>{{cardInfo.Email}}</view>
       </view>
+      <view class='grjj autoHeight'>
+        <view class='title'>个人简介：</view>
+        <view class='info'>{{cardInfo.intro}}</view>
+      </view>
     </view>
+    <view class='grjj autoHeight'>
+      <view class='title'>个人图片:</view>
+      <view class='imgList'>
+        <view class='imgBox' wx:for="{{cardInfo.people_images}}"  wx:key="{{index}}">
+          <image src='{{item}}' data-idx="{{index}}"  data-type="0" bindtap='showImg'></image>
+        </view>
+      </view>
+    </view>
+
   </view>
   <view class='more'>
     <image wx:if="{{isShow==false}}" src='/images/icon_open.png' mode='widthFix' bindtap='openDetails'></image>
@@ -79,8 +92,12 @@
     <view><image src="/images/icon_hb.png"></image></view>
     每日海报
   </view>
-  <view class='btn'><view><image src="/images/icon_mpm.png"></image></view>名片码</view>
-  <view class='btn'><view><image src="/images/icon_bz.png"></image></view>名片壁纸</view>
+  <view class='btn' bindtap='getCode'>
+    <view><image src="/images/icon_mpm.png"></image></view>名片码
+  </view>
+  <view class='btn'>
+   <view><image src="/images/icon_bz.png"></image></view>名片壁纸
+  </view>
 </view>
 
 <!--最近访客-->
@@ -113,3 +130,8 @@
 <button class='sharBtn' open-type='share'>
   <image src='/images/icon_shar.png'></image>
 </button>
+
+<!--名片二维码-->
+<view style="position:fixed;top:999999999999999999999rpx;">  
+  <canvas  style='width:800px; height:1070px;' canvas-id='myCanvas'></canvas>  
+</view>

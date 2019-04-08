@@ -244,6 +244,16 @@ page{
   font-weight: bold;
   margin-top:3px;
 }
+.grjj{
+  background: #fff;
+  padding-bottom: 10px;
+  position: relative;
+  border-radius: 8px;
+  border-bottom:1px solid #f4f4f4
+}
+.grjj .title{
+  margin-top: 20rpx;
+}
 
 /*分享*/
 .sharBtn{
@@ -254,9 +264,12 @@ page{
   right: 20px;
   bottom: 20px;
   border-radius: 50%;
-  text-align: center
+  text-align: center;
 }
 .sharBtn image{
   width: 40rpx;
   height: 40rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx
 }
