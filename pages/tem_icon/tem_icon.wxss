@@ -1,0 +1,6 @@
+/* pages/tem_icon/tem_icon.wxss */
+.list{
+  width: 30%;
+  float: left;
+  background: #000
+}

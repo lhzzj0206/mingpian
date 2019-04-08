@@ -1,0 +1,46 @@
+<!--pages/tem_card/tem_card.wxml-->
+<template name="card">
+  <view class='card autoHeight'>
+    <view class='autoHeight'>
+      <view class='info'>
+        <view class='name'>{{cardInfo.name}}<view class='positionz'>{{cardInfo.position}}</view></view> 
+        <view class='txt'>公司：{{cardInfo.company}}</view>
+        <view class='txt'>地址：{{cardInfo.address}}</view>
+      </view>
+      <view class="avatar">
+        <image src='{{cardInfo.avatar}}'></image>
+      </view>
+    </view>
+    <view class='cardBar'></view>
+    <view class='cardDetails'>
+      <view class='content'>
+        <view class='clum'>
+          <view class='icon' data-num="{{phone}}" bindtap='call'><image src='../../images/icon_5.png' mode='widthFix'></image></view>
+          <view class='title'>电话：</view>
+          <view>{{cardInfo.phone}}</view>
+        </view>
+        <view class='clum'>
+          <view class='icon' data-num="{{zuoji}}" bindtap='call'><image src='../../images/icon_3.png' mode='widthFix'></image></view>
+          <view class='title'>座机：</view>
+          <view>{{cardInfo.zuoji}}</view>
+        </view>
+        <view class='clum'>
+          <view class='icon' data-text="{{weixin}}" bindtap='copyText'><image src='../../images/icon_1.png' mode='widthFix'></image></view>
+          <view class='title'>微信：</view>
+          <view>{{cardInfo.weixin}}</view>
+        </view>
+        <view class='clum'>
+          <view class='icon' data-text="{{Email}}" bindtap='copyText'><image src='../../images/icon_2.png' mode='widthFix'></image></view>
+          <view class='title'>邮箱：</view>
+          <view>{{cardInfo.Email}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='more' bindtap='animate'>
+      <image src='/images/icon_open.png' mode='widthFix'></image>
+    </view>
+    
+  </view>
+  
+</template>
+

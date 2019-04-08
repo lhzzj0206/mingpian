@@ -1,0 +1,68 @@
+<!--index.wxml-->
+
+<view class="container" style='display:{{infoShow}}'>
+<view class="userinfo">
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信快捷登录 </button>
+</view>
+</view>
+
+<!--名片-->
+<import src="../tem_card/tem_card.wxml" />
+<template is="card" data="{{cardInfo: cardInfo}}"/>
+
+<!--按钮-->
+<view class='autoHeight'>
+ <view class='icon_box'>
+    <view class='num'>10</view>
+    <view><image src='/images/icon_rq.png' mode='widthFix'></image>人气</view>
+  </view>
+  <view class='icon_box'>
+    <view class='num'>20</view>
+    <view><image src='/images/icon_sc.png'></image>收藏</view>
+  </view>
+  <view class='icon_box'>
+    <view class='num'>40</view>
+    <view><image src='/images/icon_zan.png'></image>点赞</view>
+  </view>
+</view>
+
+<view class='btm_Btn autoHeight'>
+  <button open-type="getUserInfo" class='l' bindgetuserinfo="getUserInfo"> 创建我的名片 </button>
+  <!-- <view class='l' bindtap='toCreate'>创建我的名片</view> -->
+  <view class='r' bindtap='screen' bindtap='screen' >保存到通讯录</view>
+</view>
+
+<view class='autoHeight btnBox'>
+  <view class='btn'>
+    <view><image src="/images/icon_hb.png"></image></view>
+    每日海报
+  </view>
+  <view class='btn'><view><image src="/images/icon_mpm.png"></image></view>名片码</view>
+  <view class='btn'><view><image src="/images/icon_bz.png"></image></view>名片壁纸</view>
+</view>
+
+<!--最近访客-->
+<view class='zjfk_h3'>最近访客</view>
+<view class='zjfkBox'>
+  <view class='list autoHeight'>
+    <view class='pic'><image src='/images/no.png'></image></view>
+    <view class='text'>
+      <view>xx跟你互动了XX次</view>
+      <view>2019/3/31 19:48 最后一次查看你的名片</view>
+    </view>
+  </view>
+  <view class='list autoHeight'>
+    <view class='pic'><image src='/images/no.png'></image></view>
+    <view class='text'>
+      <view>xx跟你互动了XX次</view>
+      <view>2019/3/31 19:48 最后一次查看你的名片</view>
+    </view>
+  </view>
+  <view class='list autoHeight'>
+    <view class='pic'><image src='/images/no.png'></image></view>
+    <view class='text'>
+      <view>xx跟你互动了XX次</view>
+      <view>2019/3/31 19:48 最后一次查看你的名片</view>
+    </view>
+  </view>
+</view>

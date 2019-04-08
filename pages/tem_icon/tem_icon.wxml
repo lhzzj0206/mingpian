@@ -1,0 +1,7 @@
+<!--pages/tem_icon/tem_icon.wxml-->
+<template name="index_icon">
+  <view class='icon_box'>
+    <view class='icon_img'></view>
+    <view class='icon_txt'>{{icon.txt}}</view>
+  </view>
+</template>

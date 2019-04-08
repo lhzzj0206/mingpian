@@ -1,0 +1,6 @@
+.autoHeight{height:auto!important;min-height:0px;height:0px;}
+.autoHeight:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+
+page{
+  color: #4a4a4a
+}

@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/my/my",
+    "pages/products/products",
+    "pages/website/website"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "疯狂吧，名片吧",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#52a936",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "名片",
+        "iconPath": "images/mp.png",
+        "selectedIconPath": "images/mp_s.png"
+      },
+      {
+        "pagePath": "pages/products/products",
+        "text": "产品",
+        "iconPath": "images/cp.png",
+        "selectedIconPath": "images/cp_s.png"
+      },
+      {
+        "pagePath": "pages/website/website",
+        "text": "官网",
+        "iconPath": "images/gw.png",
+        "selectedIconPath": "images/gw_s.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_s.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,154 @@
+/**index.wxss**/
+@import "/utils/base.wxss";   /*公共css*/
+@import "../tem_card/tem_card.wxss"; /*名片css*/
+
+page{
+  background: #f7f7f9;
+  font-size: 14px;
+}
+.container{
+  position:fixed;
+  background:rgba(0,0,0,0.6);
+  width:100%;
+  padding:0;
+  z-index:999;
+
+}
+.userinfo {
+  background: #fff;
+  width: 90%;
+  padding: 80px 0;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  margin-top: -150px;
+  left:5%
+}
+.userinfo button{
+  width: 80%;
+  background: #00cb18;
+  color: #fff
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+.icon_box{
+  width: 33%;
+  float: left;
+  text-align: center;
+  padding: 10rpx 0 0
+}
+.icon_box .num{
+  color: #00cb18;
+  font-size: 40rpx;
+}
+.icon_box image{
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  top: 10rpx
+}
+
+
+.btm_Btn{
+  margin:40rpx 30rpx 0;
+  bottom:0px;
+  z-index:999;
+}
+.btm_Btn view,.btm_Btn button{
+  float: left;
+  width: 48%;
+  text-align: center;
+  line-height: 40px;
+  font-size:16px;
+  height: 40px;
+  border-radius:60rpx;
+}
+.btm_Btn view.l,.btm_Btn button.l{
+  height:40px;
+  line-height: 38px;
+  color:#00cb18;
+  background:none;
+  border:2px solid #00cb18
+
+}
+.btm_Btn view.r{
+  background:#00cb18;
+  float:right;
+  color: #fff;
+}
+
+
+.btnBox{
+  margin:40rpx 0;
+  padding:20rpx 30rpx 20rpx 0;
+  background: #fff;
+  box-shadow: 10rpx 50rpx 50rpx rgba(156, 155, 155, 0.1)
+}
+.btnBox .btn{
+  width: 150rpx;
+  float: left;
+  text-align: center;
+  border-radius: 12rpx;
+  /* background: #000; */
+  margin: 0 75rpx 0 40rpx
+}
+.btnBox .btn:last-child{
+  margin: 0 0rpx 0 30rpx
+}
+.btnBox image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 10rpx
+}
+
+/*最近访客*/
+.zjfk_h3{
+  margin: 30rpx;
+  border-left: 4rpx solid #00cb18;
+  padding-left: 20rpx;
+  font-size: 32rpx
+}
+.zjfkBox{
+  margin: 30rpx 0;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.zjfkBox .list{
+  height: 50rpx;
+  padding:20rpx 0;
+  border-bottom: 1px solid #f4f4f4
+}
+.zjfkBox .list .pic{
+  width: 80rpx;
+  height: 80rpx;
+  float: left;
+  border-radius: 50%;
+  border:1px solid #f4f4f4
+}
+.zjfkBox .list .pic image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.zjfkBox .list .text{
+  line-height: 35rpx;
+  margin-left: 110rpx
+}
+.zjfkBox .list .text view:last-child{
+  color: #8b8b8b;
+  margin-top: 13rpx
+}
