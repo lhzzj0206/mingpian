@@ -6,6 +6,8 @@ Page({
   data: {
     infoShow:'none',
     hasUserInfo:{},
+    animationData:{},
+    isShow:false,
     cardInfo:{},
     icon:{"txt":'111'}
   },
@@ -25,14 +27,6 @@ Page({
 
     this.getCard();   //获取名片信息
    
-  },
-  animate: function () {
-    var animation = wx.createAnimation({
-      duration: 800,
-      timingFunction: 'ease',
-    });
-    animation.height
-    console.log(0)
   },
   //获取名片信息
   getCard:function(){
@@ -118,5 +112,77 @@ Page({
         }
       }
     })
+  },
+  //打开名片详情
+  openDetails:function(){
+    var that = this;
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'linear'
+    })
+    that.animation = animation
+    animation.height(200).step()
+    that.setData({
+      animationData: animation.export(),
+      // 改变显示条件
+      isShow: true
+    })
+  },
+  //关闭名片详情
+  closeDetails:function(){
+    var that = this;
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'linear'
+    })
+    that.animation = animation
+    animation.height(0).step()
+    that.setData({
+      animationData: animation.export(),
+      // 改变显示条件
+      isShow: false
+    })
+  },
+  //复制
+  copyText: function (e) {
+    wx.setClipboardData({
+      data: e.currentTarget.dataset.text,
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            wx.showToast({
+              title: '复制成功'
+            })
+          }
+        })
+      }
+    })
+  },
+  //拨号
+  call: function (e) {
+    var num = e.currentTarget.dataset.num
+    wx.makePhoneCall({
+      phoneNumber: num,
+    })
+  },
+  //分享
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '疯狂吧名片',
+      path: '/pages/index/index?scene=' + app.globalData.openid,
+      // imagesUrl: 'http://www.grldsoft.com/miniapp/img/bg2.png',
+      success: function (res) {
+        // 转发成功
+        // 如果这里有 shareTickets，则说明是分享到群的
+        //console.log(res.shareTickets)
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   },
 })

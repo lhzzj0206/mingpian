@@ -7,9 +7,52 @@
 </view>
 
 <!--名片-->
-<import src="../tem_card/tem_card.wxml" />
-<template is="card" data="{{cardInfo: cardInfo}}"/>
-
+<view class='card autoHeight'>
+  <view class='autoHeight'>
+    <view class='info'>
+      <view class='name'>{{cardInfo.name}}<view class='positionz'>{{cardInfo.position}}</view></view> 
+      <view class='txt'>公司：{{cardInfo.company}}</view>
+      <view class='txt'>地址：{{cardInfo.address}}</view>
+    </view>
+    <view class="avatar">
+      <image src='{{cardInfo.avatar}}'></image>
+    </view>
+  </view>
+  <view class='cardBar'></view>
+  <view class='cardDetails' animation='{{animationData}}'>
+    <view class='content'>
+      <view class='clum'>
+        <view class='icon' data-num="{{cardInfo.phone}}" bindtap='call'>
+          <image src='../../images/icon_5.png' mode='widthFix'></image></view>
+        <view class='title'>电话：</view>
+        <view>{{cardInfo.phone}}</view>
+      </view>
+      <view class='clum'>
+        <view class='icon' data-num="{{cardInfo.zuoji}}" bindtap='call'>
+          <image src='../../images/icon_3.png' mode='widthFix'></image></view>
+        <view class='title'>座机：</view>
+        <view>{{cardInfo.zuoji}}</view>
+      </view>
+      <view class='clum'>
+        <view class='icon' data-text="{{cardInfo.weixin}}" bindtap='copyText'>
+          <image src='../../images/icon_1.png' mode='widthFix'></image></view>
+        <view class='title'>微信：</view>
+        <view>{{cardInfo.weixin}}</view>
+      </view>
+      <view class='clum'>
+        <view class='icon' data-text="{{cardInfo.Email}}" bindtap='copyText'>
+          <image src='../../images/icon_2.png' mode='widthFix'></image></view>
+        <view class='title'>邮箱：</view>
+        <view>{{cardInfo.Email}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='more'>
+    <image wx:if="{{isShow==false}}" src='/images/icon_open.png' mode='widthFix' bindtap='openDetails'></image>
+    <image wx:else src='/images/icon_close.png' mode='widthFix' bindtap='closeDetails'></image>
+  </view>
+</view>
+<!--名片 end-->
 <!--按钮-->
 <view class='autoHeight'>
  <view class='icon_box'>
@@ -25,7 +68,6 @@
     <view><image src='/images/icon_zan.png'></image>点赞</view>
   </view>
 </view>
-
 <view class='btm_Btn autoHeight'>
   <button open-type="getUserInfo" class='l' bindgetuserinfo="getUserInfo"> 创建我的名片 </button>
   <!-- <view class='l' bindtap='toCreate'>创建我的名片</view> -->
@@ -66,3 +108,8 @@
     </view>
   </view>
 </view>
+
+<!--分享-->
+<button class='sharBtn' open-type='share'>
+  <image src='/images/icon_shar.png'></image>
+</button>

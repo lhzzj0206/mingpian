@@ -1,6 +1,5 @@
 /**index.wxss**/
 @import "/utils/base.wxss";   /*公共css*/
-@import "../tem_card/tem_card.wxss"; /*名片css*/
 
 page{
   background: #f7f7f9;
@@ -14,6 +13,8 @@ page{
   z-index:999;
 
 }
+
+
 .userinfo {
   background: #fff;
   width: 90%;
@@ -151,4 +152,111 @@ page{
 .zjfkBox .list .text view:last-child{
   color: #8b8b8b;
   margin-top: 13rpx
+}
+
+
+/*名片*/
+
+.card{
+  background:#fff;
+  padding-top: 1rem;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+  position: relative;
+  margin: 30rpx 30rpx 10rpx;
+  padding:15px 15px 0;
+  line-height: 30px;
+  border-radius: 8px;
+  border: 1px solid #f4f4f4
+}
+.card .info{
+  float: left
+}
+.card .info .name{
+  font-size:30px;
+  margin-bottom: 20px;
+  font-weight: bold
+}
+.card .info .txt{
+  color: #727272
+}
+.card .positionz{
+  display:inline;
+  padding-left:20px;
+  font-size: 16px;
+  font-weight:normal
+}
+.card .avatar{
+  float: right;
+  width: 100rpx;
+  height: 100rpx;
+}
+.card .avatar image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.cardBar{
+  height: 5rpx;
+  margin-top: 10rpx;
+  border-top: 1px solid #f4f4f4;
+  text-align: center
+}
+.card .more{
+  margin-top: 10rpx;
+  
+  text-align: center;
+}
+.card .more image{
+  width: 60rpx;
+}
+
+.cardDetails{
+  height: 0;
+  overflow: hidden
+}
+
+.content{
+  position:relative;
+  background: #fff;
+  border-radius: 6px;
+}
+.clum{
+  color:#818181;
+  font-size:16px;
+  height: 45px;
+  line-height:45px;
+  border-bottom:1px solid #f4f4f4;
+}
+.clum .title{
+  color: #333;
+  font-size: 14px;
+  width: 50px;
+  float: left
+}
+.clum .icon{
+  float: right;
+  margin-top: 10px
+}
+.clum image{
+  width: 20px;
+  float: right;
+  margin-right: 10px;
+  font-weight: bold;
+  margin-top:3px;
+}
+
+/*分享*/
+.sharBtn{
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(0,0,0,0.5);
+  position:fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  text-align: center
+}
+.sharBtn image{
+  width: 40rpx;
+  height: 40rpx;
 }

@@ -1,9 +1,10 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/my/my",
     "pages/products/products",
-    "pages/website/website"
+    "pages/website/website",
+    "pages/leida/leida"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,6 +32,12 @@
         "text": "官网",
         "iconPath": "images/gw.png",
         "selectedIconPath": "images/gw_s.png"
+      },
+      {
+        "pagePath": "pages/leida/leida",
+        "text": "官网",
+        "iconPath": "images/ld.png",
+        "selectedIconPath": "images/ld_s.png"
       },
       {
         "pagePath": "pages/my/my",
